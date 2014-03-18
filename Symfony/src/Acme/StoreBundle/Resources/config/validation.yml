@@ -1,0 +1,11 @@
+Acme\StoreBundle\Entity\Product:
+    properties:
+        name:
+            - NotBlank: ~
+        price:
+            - NotBlank: ~
+Acme\StoreBundle\Entity\Document:
+    properties:
+        file:
+            - File:
+                 maxSize: 6000000

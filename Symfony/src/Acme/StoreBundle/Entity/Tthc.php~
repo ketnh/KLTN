@@ -1,0 +1,95 @@
+<?php
+
+namespace Acme\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tthc
+ *
+ * @ORM\Table(name="tthc")
+ * @ORM\Entity
+ */
+class Tthc
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NameTTHC", type="string", length=45, nullable=false)
+     */
+    private $nametthc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDichVu", type="integer", nullable=false)
+     */
+    private $iddichvu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NoiDung", type="string", length=255, nullable=false)
+     */
+    private $noidung;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDonViThuLy", type="integer", nullable=false)
+     */
+    private $iddonvithuly;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="IsHide", type="boolean", nullable=false)
+     */
+    private $ishide;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DinhKem", type="string", length=45, nullable=true)
+     */
+    private $dinhkem;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="VanBanLienQuan", type="string", length=45, nullable=true)
+     */
+    private $vanbanlienquan;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PhanQuyen", type="integer", nullable=false)
+     */
+    private $phanquyen;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="HuongDan", type="text", nullable=true)
+     */
+    private $huongdan;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Loai", type="integer", nullable=true)
+     */
+    private $loai;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idTTHC", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idtthc;
+
+
+}

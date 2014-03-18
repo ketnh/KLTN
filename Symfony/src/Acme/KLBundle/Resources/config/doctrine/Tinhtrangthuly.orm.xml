@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Acme\KLBundle\Entity\Tinhtrangthuly" table="tinhtrangthuly">
+    <id name="idtinhtrangthuly" type="integer" column="idTinhTrangThuLy">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="tinhtrangthuly" type="string" column="TinhTrangThuLy" length="45" nullable="false"/>
+    <field name="time" type="datetime" column="Time" nullable="false"/>
+    <field name="thututhuly" type="integer" column="ThuTuThuLy" nullable="false"/>
+    <many-to-one field="idchuyenvienthuly" target-entity="Chuyenvienthuly">
+      <join-columns>
+        <join-column name="idChuyenVienThuLy" referenced-column-name="idChuyenVienThuLy"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

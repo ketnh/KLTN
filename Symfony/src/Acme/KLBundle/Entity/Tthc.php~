@@ -1,0 +1,107 @@
+<?php
+
+namespace Acme\KLBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tthc
+ *
+ * @ORM\Table(name="tthc")
+ * @ORM\Entity
+ */
+class Tthc
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NameTTHC", type="string", length=45, nullable=false)
+     */
+    private $nametthc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NoiDungThucHien", type="string", length=255, nullable=false)
+     */
+    private $noidungthuchien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="GiayToHoSo", type="string", length=45, nullable=false)
+     */
+    private $giaytohoso;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ThoiGianGiaiQuyet", type="string", length=45, nullable=false)
+     */
+    private $thoigiangiaiquyet;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PhanQuyen", type="integer", nullable=false)
+     */
+    private $phanquyen;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="IsHide", type="boolean", nullable=false)
+     */
+    private $ishide;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idTTHC", type="string", length=45)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idtthc;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Vanbanlienquan
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Vanbanlienquan")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idVanBanLienQuan", referencedColumnName="idVanBanLienQuan")
+     * })
+     */
+    private $idvanbanlienquan;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Donvithuly
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Donvithuly")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idDonViThuLy", referencedColumnName="idDonViThuLy")
+     * })
+     */
+    private $iddonvithuly;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Dinhkemtthc
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Dinhkemtthc")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idDinhKem", referencedColumnName="idDinhKemTTHC")
+     * })
+     */
+    private $iddinhkem;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Linhvuc
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Linhvuc")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idLinhVuc", referencedColumnName="idLinhVuc")
+     * })
+     */
+    private $idlinhvuc;
+
+
+}

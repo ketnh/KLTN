@@ -1,0 +1,113 @@
+<?php
+
+namespace Acme\KLBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Hosotthc
+ *
+ * @ORM\Table(name="hosotthc")
+ * @ORM\Entity
+ */
+class Hosotthc
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="NgayNhan", type="date", nullable=false)
+     */
+    private $ngaynhan;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="NgayHenTra", type="date", nullable=false)
+     */
+    private $ngayhentra;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="IsSentDVTL", type="boolean", nullable=true)
+     */
+    private $issentdvtl;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="IsRecieveDVTL", type="boolean", nullable=true)
+     */
+    private $isrecievedvtl;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idHoSoTTHC", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idhosotthc;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Tthc
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Tthc")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idTTHC", referencedColumnName="idTTHC")
+     * })
+     */
+    private $idtthc;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Tinhtrangthuly
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Tinhtrangthuly")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idTinhTrangThuLy", referencedColumnName="idTinhTrangThuLy")
+     * })
+     */
+    private $idtinhtrangthuly;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Donvithuly
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Donvithuly")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idDonViThuLy", referencedColumnName="idDonViThuLy")
+     * })
+     */
+    private $iddonvithuly;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Dinhkemnhanhs
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Dinhkemnhanhs")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idDinhKemNhan", referencedColumnName="idDinhKemNhanHS")
+     * })
+     */
+    private $iddinhkemnhan;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Dinhkemguihs
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Dinhkemguihs")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idDinhKemGui", referencedColumnName="idDinhKemGuiHS")
+     * })
+     */
+    private $iddinhkemgui;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Congdan
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Congdan")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idCongDan", referencedColumnName="idCongDan")
+     * })
+     */
+    private $idcongdan;
+
+
+}

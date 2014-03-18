@@ -1,0 +1,56 @@
+<?php
+
+namespace Acme\KLBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tinhtrangthuly
+ *
+ * @ORM\Table(name="tinhtrangthuly")
+ * @ORM\Entity
+ */
+class Tinhtrangthuly
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TinhTrangThuLy", type="string", length=45, nullable=false)
+     */
+    private $tinhtrangthuly;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="Time", type="datetime", nullable=false)
+     */
+    private $time;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ThuTuThuLy", type="integer", nullable=false)
+     */
+    private $thututhuly;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idTinhTrangThuLy", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idtinhtrangthuly;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Chuyenvienthuly
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Chuyenvienthuly")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idChuyenVienThuLy", referencedColumnName="idChuyenVienThuLy")
+     * })
+     */
+    private $idchuyenvienthuly;
+
+
+}

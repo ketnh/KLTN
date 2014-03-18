@@ -1,0 +1,27 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<table>
+    <tr>
+        <td>{{ form_label(form.name) }}</td>
+        
+        <td>{{ form_widget(form.name) }}</td>
+        <td>{{ form_errors(form.name) }}</td>
+    </tr>
+
+    <tr>
+        <td>{{ form_label(form.price) }}</td>
+        
+        <td>{{ form_widget(form.price) }}</td>
+        <td>{{ form_errors(form.price) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_label(form.description) }}</td>
+        
+        <td>{{ form_widget(form.description) }}</td>
+        <td>{{ form_errors(form.description) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_widget(form.save) }}</td>
+    </tr>
+</table>
+{{form_end(form)}}

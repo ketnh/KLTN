@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Quản lý hồ sơn</title>
+        {% javascripts '@AcmeKLBundle/Resources/public/menu_source/menu_jquery.js' %}
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>  
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}        
+         {% stylesheets 'bundles/acmekl/menu_source/styles.css' 
+            'bundles/acmekl/style.css'
+         filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    </head>
+
+
+<body>
+
+<div class="wrapper">
+
+	<header class="header">		
+	</header><!-- .header-->
+        <div class="sidebar">
+            <p>
+                Xin chào{#{{app.user.username}}#}
+                <b id="right">Đăng xuất</b>
+            </p>
+        </div>
+	<div class="middle">
+
+		<div class="container">
+			<main class="content">
+				<strong>Content:</strong> Sed placerat accumsan ligula. Aliquam felis magna, congue quis, tempus eu, aliquam vitae, ante. Cras neque justo, ultrices at, rhoncus a, facilisis eget, nisl. Quisque vitae pede. Nam et augue. Sed a elit. Ut vel massa. Suspendisse nibh pede, ultrices vitae, ultrices nec, mollis non, nibh. In sit amet pede quis leo vulputate hendrerit. Cras laoreet leo et justo auctor condimentum. Integer id enim. Suspendisse egestas, dui ac egestas mollis, libero orci hendrerit lacus, et malesuada lorem neque ac libero. Morbi tempor pulvinar pede. Donec vel elit.
+			</main><!-- .content -->
+		</div><!-- .container-->
+
+		<aside class="left-sidebar">
+			<div id='cssmenu'>
+                        <ul>
+                           <li class='active'><a href='index.html'><span>Home</span></a></li>
+                           <li class='has-sub'><a href='#'><span>Hồ sơ</span></a>
+                              <ul>
+                                 <li><a href='#'><span>Đã tiếp nhận</span></a></li>
+                                 <li><a href='#'><span>Chờ tiếp nhận</span></a></li>
+                                 <li><a href='#'><span>Quá hạn</span></a></li>
+                                 <li class='last'><a href='#'><span>Đã chuyển thụ lý</span></a></li>
+                              </ul>
+                           </li>
+                           <li class='has-sub'><a href='#'><span>Gửi tin nhắn</span></a>
+                              <ul>
+                                 <li><a href='#'><span>About</span></a></li>
+                                 <li class='last'><a href='#'><span>Location</span></a></li>
+                              </ul>
+                           </li>
+                           <li class='last'><a href='#'><span>Contact</span></a></li>
+                        </ul>
+                        </div>
+		</aside><!-- .left-sidebar -->
+
+	</div><!-- .middle-->
+
+	<footer class="footer">
+		<strong>Footer:</strong> Mus elit Morbi mus enim lacus at quis Nam eget morbi. Et semper urna urna non at cursus dolor vestibulum neque enim. Tellus interdum at laoreet laoreet lacinia lacinia sed Quisque justo quis. Hendrerit scelerisque lorem elit orci tempor tincidunt enim Phasellus dignissim tincidunt. Nunc vel et Sed nisl Vestibulum odio montes Aliquam volutpat pellentesque. Ut pede sagittis et quis nunc gravida porttitor ligula.
+	</footer><!-- .footer -->
+
+</div><!-- .wrapper -->
+
+</body>
+</html>
+
+
+<html>
+    
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<?php
+
+namespace Acme\KLBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Dinhkemnhanhs
+ *
+ * @ORM\Table(name="dinhkemnhanhs")
+ * @ORM\Entity
+ */
+class Dinhkemnhanhs
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TenFileDinhKem", type="string", length=45, nullable=false)
+     */
+    private $tenfiledinhkem;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PathToFile", type="string", length=45, nullable=false)
+     */
+    private $pathtofile;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDinhKemNhanHS", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $iddinhkemnhanhs;
+
+
+}

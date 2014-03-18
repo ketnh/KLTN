@@ -1,0 +1,60 @@
+<?php
+
+namespace Acme\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Hoidaptt
+ *
+ * @ORM\Table(name="hoidaptt")
+ * @ORM\Entity
+ */
+class Hoidaptt
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDonViThuLy", type="integer", nullable=false)
+     */
+    private $iddonvithuly;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDichVu", type="integer", nullable=false)
+     */
+    private $iddichvu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CauHoi", type="string", length=45, nullable=false)
+     */
+    private $cauhoi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CauTraLoi", type="string", length=45, nullable=true)
+     */
+    private $cautraloi;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="isHide", type="boolean", nullable=false)
+     */
+    private $ishide;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idHoiDapTT", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idhoidaptt;
+
+
+}

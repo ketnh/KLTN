@@ -1,0 +1,25 @@
+<?php
+
+namespace Acme\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Dinhkem
+ *
+ * @ORM\Table(name="dinhkem")
+ * @ORM\Entity
+ */
+class Dinhkem
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDinhkem", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $iddinhkem;
+
+
+}

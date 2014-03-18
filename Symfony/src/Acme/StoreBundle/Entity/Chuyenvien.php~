@@ -1,0 +1,60 @@
+<?php
+
+namespace Acme\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Chuyenvien
+ *
+ * @ORM\Table(name="chuyenvien")
+ * @ORM\Entity
+ */
+class Chuyenvien
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NameCB", type="string", length=45, nullable=false)
+     */
+    private $namecb;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="NgaySinh", type="date", nullable=false)
+     */
+    private $ngaysinh;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDonViThuLy", type="integer", nullable=false)
+     */
+    private $iddonvithuly;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CMNT", type="string", length=11, nullable=true)
+     */
+    private $cmnt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Nhom", type="integer", nullable=true)
+     */
+    private $nhom;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idCanBo", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idcanbo;
+
+
+}

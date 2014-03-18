@@ -1,0 +1,95 @@
+<?php
+
+namespace Acme\KLBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Linhvuc
+ *
+ * @ORM\Table(name="linhvuc")
+ * @ORM\Entity
+ */
+class Linhvuc
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NameDV", type="string", length=45, nullable=false)
+     */
+    private $namedv;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="MoTaLinhVuc", type="string", length=255, nullable=false)
+     */
+    private $motalinhvuc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idLinhVuc", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idlinhvuc;
+
+
+
+    /**
+     * Set namedv
+     *
+     * @param string $namedv
+     * @return Linhvuc
+     */
+    public function setNamedv($namedv)
+    {
+        $this->namedv = $namedv;
+    
+        return $this;
+    }
+
+    /**
+     * Get namedv
+     *
+     * @return string 
+     */
+    public function getNamedv()
+    {
+        return $this->namedv;
+    }
+
+    /**
+     * Set motalinhvuc
+     *
+     * @param string $motalinhvuc
+     * @return Linhvuc
+     */
+    public function setMotalinhvuc($motalinhvuc)
+    {
+        $this->motalinhvuc = $motalinhvuc;
+    
+        return $this;
+    }
+
+    /**
+     * Get motalinhvuc
+     *
+     * @return string 
+     */
+    public function getMotalinhvuc()
+    {
+        return $this->motalinhvuc;
+    }
+
+    /**
+     * Get idlinhvuc
+     *
+     * @return integer 
+     */
+    public function getIdlinhvuc()
+    {
+        return $this->idlinhvuc;
+    }
+}

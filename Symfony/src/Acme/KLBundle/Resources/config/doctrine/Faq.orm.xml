@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Acme\KLBundle\Entity\Faq" table="faq">
+    <id name="idfaq" type="integer" column="idFAQ">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ndcauhoi" type="string" column="NDCauHoi" length="45" nullable="false"/>
+    <field name="ndcautraloi" type="string" column="NDCauTraLoi" length="45" nullable="true"/>
+    <many-to-one field="idtthc" target-entity="Tthc">
+      <join-columns>
+        <join-column name="idTTHC" referenced-column-name="idTTHC"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

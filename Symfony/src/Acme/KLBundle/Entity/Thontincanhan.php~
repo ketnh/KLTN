@@ -1,0 +1,60 @@
+<?php
+
+namespace Acme\KLBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Thontincanhan
+ *
+ * @ORM\Table(name="thontincanhan")
+ * @ORM\Entity
+ */
+class Thontincanhan
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="hoten", type="string", length=45, nullable=true)
+     */
+    private $hoten;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="quequan", type="string", length=45, nullable=true)
+     */
+    private $quequan;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CMTND", type="string", length=45, nullable=true)
+     */
+    private $cmtnd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SDT", type="string", length=45, nullable=true)
+     */
+    private $sdt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ngaysinh", type="date", nullable=true)
+     */
+    private $ngaysinh;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

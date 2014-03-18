@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Acme\KLBundle\Entity\Tthc" table="tthc">
+    <id name="idtthc" type="string" column="idTTHC" length="45">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nametthc" type="string" column="NameTTHC" length="45" nullable="false"/>
+    <field name="noidungthuchien" type="string" column="NoiDungThucHien" length="255" nullable="false"/>
+    <field name="giaytohoso" type="string" column="GiayToHoSo" length="45" nullable="false"/>
+    <field name="thoigiangiaiquyet" type="string" column="ThoiGianGiaiQuyet" length="45" nullable="false"/>
+    <field name="phanquyen" type="integer" column="PhanQuyen" nullable="false"/>
+    <field name="ishide" type="boolean" column="IsHide" nullable="false"/>
+    <many-to-one field="idvanbanlienquan" target-entity="Vanbanlienquan">
+      <join-columns>
+        <join-column name="idVanBanLienQuan" referenced-column-name="idVanBanLienQuan"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="iddonvithuly" target-entity="Donvithuly">
+      <join-columns>
+        <join-column name="idDonViThuLy" referenced-column-name="idDonViThuLy"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="iddinhkem" target-entity="Dinhkemtthc">
+      <join-columns>
+        <join-column name="idDinhKem" referenced-column-name="idDinhKemTTHC"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idlinhvuc" target-entity="Linhvuc">
+      <join-columns>
+        <join-column name="idLinhVuc" referenced-column-name="idLinhVuc"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
