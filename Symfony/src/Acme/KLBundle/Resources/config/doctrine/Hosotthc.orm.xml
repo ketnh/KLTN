@@ -8,19 +8,14 @@
     <field name="ngayhentra" type="date" column="NgayHenTra" nullable="false"/>
     <field name="issentdvtl" type="boolean" column="IsSentDVTL" nullable="true"/>
     <field name="isrecievedvtl" type="boolean" column="IsRecieveDVTL" nullable="true"/>
-    <many-to-one field="idtthc" target-entity="Tthc">
+    <many-to-one field="iddonvithuly" target-entity="Donvithuly">
       <join-columns>
-        <join-column name="idTTHC" referenced-column-name="idTTHC"/>
+        <join-column name="idDonViThuLy" referenced-column-name="idDonViThuLy"/>
       </join-columns>
     </many-to-one>
     <many-to-one field="idtinhtrangthuly" target-entity="Tinhtrangthuly">
       <join-columns>
         <join-column name="idTinhTrangThuLy" referenced-column-name="idTinhTrangThuLy"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="iddonvithuly" target-entity="Donvithuly">
-      <join-columns>
-        <join-column name="idDonViThuLy" referenced-column-name="idDonViThuLy"/>
       </join-columns>
     </many-to-one>
     <many-to-one field="iddinhkemnhan" target-entity="Dinhkemnhanhs">
@@ -36,6 +31,11 @@
     <many-to-one field="idcongdan" target-entity="Congdan">
       <join-columns>
         <join-column name="idCongDan" referenced-column-name="idCongDan"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idtthc" target-entity="Tthc">
+      <join-columns>
+        <join-column name="idTTHC" referenced-column-name="idTTHC"/>
       </join-columns>
     </many-to-one>
   </entity>

@@ -7,6 +7,11 @@
     <field name="cauhoi" type="string" column="CauHoi" length="45" nullable="false"/>
     <field name="cautraloi" type="string" column="CauTraLoi" length="45" nullable="true"/>
     <field name="ishide" type="boolean" column="isHide" nullable="false"/>
+    <many-to-one field="idcongdan" target-entity="Congdan">
+      <join-columns>
+        <join-column name="idCongDan" referenced-column-name="idCongDan"/>
+      </join-columns>
+    </many-to-one>
     <many-to-one field="iddonvithuly" target-entity="Donvithuly">
       <join-columns>
         <join-column name="idDonViThuLy" referenced-column-name="idDonViThuLy"/>
@@ -15,11 +20,6 @@
     <many-to-one field="idtthc" target-entity="Linhvuc">
       <join-columns>
         <join-column name="idTTHC" referenced-column-name="idLinhVuc"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="idcongdan" target-entity="Congdan">
-      <join-columns>
-        <join-column name="idCongDan" referenced-column-name="idCongDan"/>
       </join-columns>
     </many-to-one>
   </entity>

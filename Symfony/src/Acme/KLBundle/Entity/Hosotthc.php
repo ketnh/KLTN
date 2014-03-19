@@ -50,14 +50,14 @@ class Hosotthc
     private $idhosotthc;
 
     /**
-     * @var \Acme\KLBundle\Entity\Tthc
+     * @var \Acme\KLBundle\Entity\Donvithuly
      *
-     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Tthc")
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Donvithuly")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idTTHC", referencedColumnName="idTTHC")
+     *   @ORM\JoinColumn(name="idDonViThuLy", referencedColumnName="idDonViThuLy")
      * })
      */
-    private $idtthc;
+    private $iddonvithuly;
 
     /**
      * @var \Acme\KLBundle\Entity\Tinhtrangthuly
@@ -68,16 +68,6 @@ class Hosotthc
      * })
      */
     private $idtinhtrangthuly;
-
-    /**
-     * @var \Acme\KLBundle\Entity\Donvithuly
-     *
-     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Donvithuly")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idDonViThuLy", referencedColumnName="idDonViThuLy")
-     * })
-     */
-    private $iddonvithuly;
 
     /**
      * @var \Acme\KLBundle\Entity\Dinhkemnhanhs
@@ -108,6 +98,16 @@ class Hosotthc
      * })
      */
     private $idcongdan;
+
+    /**
+     * @var \Acme\KLBundle\Entity\Tthc
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Tthc")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idTTHC", referencedColumnName="idTTHC")
+     * })
+     */
+    private $idtthc;
 
 
 
@@ -214,26 +214,26 @@ class Hosotthc
     }
 
     /**
-     * Set idtthc
+     * Set iddonvithuly
      *
-     * @param \Acme\KLBundle\Entity\Tthc $idtthc
+     * @param \Acme\KLBundle\Entity\Donvithuly $iddonvithuly
      * @return Hosotthc
      */
-    public function setIdtthc(\Acme\KLBundle\Entity\Tthc $idtthc = null)
+    public function setIddonvithuly(\Acme\KLBundle\Entity\Donvithuly $iddonvithuly = null)
     {
-        $this->idtthc = $idtthc;
+        $this->iddonvithuly = $iddonvithuly;
     
         return $this;
     }
 
     /**
-     * Get idtthc
+     * Get iddonvithuly
      *
-     * @return \Acme\KLBundle\Entity\Tthc 
+     * @return \Acme\KLBundle\Entity\Donvithuly 
      */
-    public function getIdtthc()
+    public function getIddonvithuly()
     {
-        return $this->idtthc;
+        return $this->iddonvithuly;
     }
 
     /**
@@ -257,29 +257,6 @@ class Hosotthc
     public function getIdtinhtrangthuly()
     {
         return $this->idtinhtrangthuly;
-    }
-
-    /**
-     * Set iddonvithuly
-     *
-     * @param \Acme\KLBundle\Entity\Donvithuly $iddonvithuly
-     * @return Hosotthc
-     */
-    public function setIddonvithuly(\Acme\KLBundle\Entity\Donvithuly $iddonvithuly = null)
-    {
-        $this->iddonvithuly = $iddonvithuly;
-    
-        return $this;
-    }
-
-    /**
-     * Get iddonvithuly
-     *
-     * @return \Acme\KLBundle\Entity\Donvithuly 
-     */
-    public function getIddonvithuly()
-    {
-        return $this->iddonvithuly;
     }
 
     /**
@@ -349,5 +326,28 @@ class Hosotthc
     public function getIdcongdan()
     {
         return $this->idcongdan;
+    }
+
+    /**
+     * Set idtthc
+     *
+     * @param \Acme\KLBundle\Entity\Tthc $idtthc
+     * @return Hosotthc
+     */
+    public function setIdtthc(\Acme\KLBundle\Entity\Tthc $idtthc = null)
+    {
+        $this->idtthc = $idtthc;
+    
+        return $this;
+    }
+
+    /**
+     * Get idtthc
+     *
+     * @return \Acme\KLBundle\Entity\Tthc 
+     */
+    public function getIdtthc()
+    {
+        return $this->idtthc;
     }
 }

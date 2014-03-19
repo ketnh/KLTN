@@ -28,16 +28,6 @@ class Donvithuly
      */
     private $iddonvithuly;
 
-    /**
-     * @var \Acme\KLBundle\Entity\Chuyenvienthuly
-     *
-     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Chuyenvienthuly")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idTruongDonVi", referencedColumnName="idChuyenVienThuLy")
-     * })
-     */
-    private $idtruongdonvi;
-
 
 
     /**
@@ -71,28 +61,5 @@ class Donvithuly
     public function getIddonvithuly()
     {
         return $this->iddonvithuly;
-    }
-
-    /**
-     * Set idtruongdonvi
-     *
-     * @param \Acme\KLBundle\Entity\Chuyenvienthuly $idtruongdonvi
-     * @return Donvithuly
-     */
-    public function setIdtruongdonvi(\Acme\KLBundle\Entity\Chuyenvienthuly $idtruongdonvi = null)
-    {
-        $this->idtruongdonvi = $idtruongdonvi;
-    
-        return $this;
-    }
-
-    /**
-     * Get idtruongdonvi
-     *
-     * @return \Acme\KLBundle\Entity\Chuyenvienthuly 
-     */
-    public function getIdtruongdonvi()
-    {
-        return $this->idtruongdonvi;
     }
 }

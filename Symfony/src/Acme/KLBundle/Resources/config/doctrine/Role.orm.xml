@@ -5,10 +5,16 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="chucvu" type="string" column="chucvu" length="45" nullable="true"/>
-    <many-to-one field="user" target-entity="User">
-      <join-columns>
-        <join-column name="User_id" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
+    <field name="trachnhiem" type="string" column="trachnhiem" length="45" nullable="true"/>
+    <many-to-many field="user" target-entity="User" inversed-by="role">
+      <join-table name="role_has_user">
+        <join-columns>
+          <join-column name="Role_id" referenced-column-name="id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="User_id" referenced-column-name="id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
   </entity>
 </doctrine-mapping>

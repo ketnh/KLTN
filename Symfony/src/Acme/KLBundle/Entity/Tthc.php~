@@ -55,9 +55,9 @@ class Tthc
     private $ishide;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="idTTHC", type="string", length=45)
+     * @ORM\Column(name="idTTHC", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

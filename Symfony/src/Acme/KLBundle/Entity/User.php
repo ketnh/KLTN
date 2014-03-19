@@ -13,14 +13,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface, \Serializable
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-    /**
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=45, nullable=false)
@@ -48,7 +40,14 @@ class User implements UserInterface, \Serializable
      */
     private $isactive;
 
-    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
     /**
      * @var \Acme\KLBundle\Entity\Thontincanhan
@@ -60,7 +59,21 @@ class User implements UserInterface, \Serializable
      */
     private $thontincanhan;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Acme\KLBundle\Entity\Role", mappedBy="user")
+     */
+    private $role;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->role = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 
     /**
      * Set username
@@ -186,10 +199,42 @@ class User implements UserInterface, \Serializable
     {
         return $this->thontincanhan;
     }
+
+    /**
+     * Add role
+     *
+     * @param \Acme\KLBundle\Entity\Role $role
+     * @return User
+     */
+    public function addRole(\Acme\KLBundle\Entity\Role $role)
+    {
+        $this->role[] = $role;
     
+        return $this;
+    }
+
+    /**
+     * Remove role
+     *
+     * @param \Acme\KLBundle\Entity\Role $role
+     */
+    public function removeRole(\Acme\KLBundle\Entity\Role $role)
+    {
+        $this->role->removeElement($role);
+    }
+
+    /**
+     * Get role
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
     public function getRoles()
     {
-    return array('ROLE_USER');
+        return array('ROLE_USER');
     }
     /**
     * @inheritDoc

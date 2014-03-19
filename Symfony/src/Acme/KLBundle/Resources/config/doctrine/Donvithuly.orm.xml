@@ -5,10 +5,5 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="namedonvithuly" type="string" column="NameDonViThuLy" length="45" nullable="false"/>
-    <many-to-one field="idtruongdonvi" target-entity="Chuyenvienthuly">
-      <join-columns>
-        <join-column name="idTruongDonVi" referenced-column-name="idChuyenVienThuLy"/>
-      </join-columns>
-    </many-to-one>
   </entity>
 </doctrine-mapping>

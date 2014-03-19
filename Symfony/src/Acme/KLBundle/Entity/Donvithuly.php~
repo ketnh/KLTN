@@ -28,15 +28,5 @@ class Donvithuly
      */
     private $iddonvithuly;
 
-    /**
-     * @var \Acme\KLBundle\Entity\Chuyenvienthuly
-     *
-     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Chuyenvienthuly")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idTruongDonVi", referencedColumnName="idChuyenVienThuLy")
-     * })
-     */
-    private $idtruongdonvi;
-
 
 }

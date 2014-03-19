@@ -59,5 +59,19 @@ class User
      */
     private $thontincanhan;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Acme\KLBundle\Entity\Role", mappedBy="user")
+     */
+    private $role;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->role = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 }

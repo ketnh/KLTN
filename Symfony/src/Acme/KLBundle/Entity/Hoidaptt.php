@@ -43,6 +43,16 @@ class Hoidaptt
     private $idhoidaptt;
 
     /**
+     * @var \Acme\KLBundle\Entity\Congdan
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Congdan")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idCongDan", referencedColumnName="idCongDan")
+     * })
+     */
+    private $idcongdan;
+
+    /**
      * @var \Acme\KLBundle\Entity\Donvithuly
      *
      * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Donvithuly")
@@ -61,16 +71,6 @@ class Hoidaptt
      * })
      */
     private $idtthc;
-
-    /**
-     * @var \Acme\KLBundle\Entity\Congdan
-     *
-     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Congdan")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idCongDan", referencedColumnName="idCongDan")
-     * })
-     */
-    private $idcongdan;
 
 
 
@@ -154,6 +154,29 @@ class Hoidaptt
     }
 
     /**
+     * Set idcongdan
+     *
+     * @param \Acme\KLBundle\Entity\Congdan $idcongdan
+     * @return Hoidaptt
+     */
+    public function setIdcongdan(\Acme\KLBundle\Entity\Congdan $idcongdan = null)
+    {
+        $this->idcongdan = $idcongdan;
+    
+        return $this;
+    }
+
+    /**
+     * Get idcongdan
+     *
+     * @return \Acme\KLBundle\Entity\Congdan 
+     */
+    public function getIdcongdan()
+    {
+        return $this->idcongdan;
+    }
+
+    /**
      * Set iddonvithuly
      *
      * @param \Acme\KLBundle\Entity\Donvithuly $iddonvithuly
@@ -197,28 +220,5 @@ class Hoidaptt
     public function getIdtthc()
     {
         return $this->idtthc;
-    }
-
-    /**
-     * Set idcongdan
-     *
-     * @param \Acme\KLBundle\Entity\Congdan $idcongdan
-     * @return Hoidaptt
-     */
-    public function setIdcongdan(\Acme\KLBundle\Entity\Congdan $idcongdan = null)
-    {
-        $this->idcongdan = $idcongdan;
-    
-        return $this;
-    }
-
-    /**
-     * Get idcongdan
-     *
-     * @return \Acme\KLBundle\Entity\Congdan 
-     */
-    public function getIdcongdan()
-    {
-        return $this->idcongdan;
     }
 }

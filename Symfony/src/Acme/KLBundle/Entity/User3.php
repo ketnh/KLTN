@@ -6,19 +6,18 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * User
- * @ORM\Entity(repositoryClass="Acme\KLBundle\Entity\UserRepository")
+ *
  * @ORM\Table(name="user")
  * @ORM\Entity
  */
 class User implements UserInterface, \Serializable
 {
     /**
-     * @var \Acme\KLBundle\Entity\Thontincanhan
+     * @var integer
      *
-     * @ORM\OneToOne(targetEntity="Acme\KLBundle\Entity\Thontincanhan")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id", referencedColumnName="id", unique=true)
-     * })
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
     /**
@@ -51,7 +50,23 @@ class User implements UserInterface, \Serializable
 
     
 
-
+    /**
+     * @var \Acme\KLBundle\Entity\Thontincanhan
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\KLBundle\Entity\Thontincanhan")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Thontincanhan_id", referencedColumnName="id")
+     * })
+     */
+    private $thontincanhan;
+    public function __construct()
+    {
+        $this->roles = new ArrayCollection();
+    }
+    public function getRoles()
+    {
+        return $this->roles->toArray();
+    }
 
     /**
      * Set username
@@ -146,34 +161,38 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * Set id
-     *
-     * @param \Acme\KLBundle\Entity\Thontincanhan $id
-     * @return User
-     */
-    public function setId(\Acme\KLBundle\Entity\Thontincanhan $id = null)
-    {
-        $this->id = $id;
-    
-        return $this;
-    }
-
-    /**
      * Get id
      *
-     * @return \Acme\KLBundle\Entity\Thontincanhan 
+     * @return integer 
      */
     public function getId()
     {
         return $this->id;
     }
+
     /**
-    * @inheritDoc
-    */
-    public function getRoles()
+     * Set thontincanhan
+     *
+     * @param \Acme\KLBundle\Entity\Thontincanhan $thontincanhan
+     * @return User
+     */
+    public function setThontincanhan(\Acme\KLBundle\Entity\Thontincanhan $thontincanhan = null)
     {
-    return array('ROLE_USER');
+        $this->thontincanhan = $thontincanhan;
+    
+        return $this;
     }
+
+    /**
+     * Get thontincanhan
+     *
+     * @return \Acme\KLBundle\Entity\Thontincanhan 
+     */
+    public function getThontincanhan()
+    {
+        return $this->thontincanhan;
+    }
+    
     /**
     * @inheritDoc
     */
@@ -215,4 +234,32 @@ class User implements UserInterface, \Serializable
         ) = unserialize($serialized);
     }
  
+    /**
+     * @var integer
+     */
+    private $thontincanhanId;
+
+
+    /**
+     * Set thontincanhanId
+     *
+     * @param integer $thontincanhanId
+     * @return User
+     */
+    public function setThontincanhanId($thontincanhanId)
+    {
+        $this->thontincanhanId = $thontincanhanId;
+    
+        return $this;
+    }
+
+    /**
+     * Get thontincanhanId
+     *
+     * @return integer 
+     */
+    public function getThontincanhanId()
+    {
+        return $this->thontincanhanId;
+    }
 }
