@@ -9,6 +9,6 @@ login:
     path: /login
     defaults: { _controller: AcmeKLBundle:Security:login }
 login_check:
-    path: /template/login_check
+    path: staff/login_check
 logout:
-    path: /template/logout
+    path: staff/logout

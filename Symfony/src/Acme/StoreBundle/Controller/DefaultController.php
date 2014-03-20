@@ -48,7 +48,8 @@ class DefaultController extends Controller
             $em->flush();
             return $this->redirect($this->generateUrl('acme_show_db'));
         }
-        return $this->render('AcmeStoreBundle:Default:db.html.twig', array('products' => $products,'form'=>$form->createView()));
+        return $this->render('AcmeStoreBundle:Default:db.html.twig', array('products' => $products,
+            'form'=>$form->createView()));
     }
     public function newAction(Request $request)
     {

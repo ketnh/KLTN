@@ -180,9 +180,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // acme_kl_homepage
-        if ($pathinfo === '/template') {
-            return array (  '_controller' => 'Acme\\KLBundle\\Controller\\DefaultController::indexAction',  '_route' => 'acme_kl_homepage',);
+        if (0 === strpos($pathinfo, '/staff')) {
+            // acme_kl_homepage
+            if ($pathinfo === '/staff/template') {
+                return array (  '_controller' => 'Acme\\KLBundle\\Controller\\DefaultController::indexAction',  '_route' => 'acme_kl_homepage',);
+            }
+
+            // showTTHC
+            if ($pathinfo === '/staff/showProfile') {
+                return array (  '_controller' => 'Acme\\KLBundle\\Controller\\StaffController::showProfileAction',  '_route' => 'showTTHC',);
+            }
+
         }
 
         // acme_store_homepage
@@ -224,14 +232,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Acme\\KLBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
         }
 
-        if (0 === strpos($pathinfo, '/template/log')) {
+        if (0 === strpos($pathinfo, '/staff/log')) {
             // login_check
-            if ($pathinfo === '/template/login_check') {
+            if ($pathinfo === '/staff/login_check') {
                 return array('_route' => 'login_check');
             }
 
             // logout
-            if ($pathinfo === '/template/logout') {
+            if ($pathinfo === '/staff/logout') {
                 return array('_route' => 'logout');
             }
 

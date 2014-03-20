@@ -152,6 +152,6 @@ class Role implements \Symfony\Component\Security\Core\Role\RoleInterface
     */
     public function getRole()
     {
-    return $this->role;
-}
+        return $this->trachnhiem;
+    }
 }

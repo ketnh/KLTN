@@ -1,17 +1,31 @@
 <?php
+
 namespace Acme\KLBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Acme\KLBundle\Form\TTHCActionType;
+use Acme\KLBundle\Form\TTHCSearchType;
 use Acme\KLBundle\Entity\Hosotthc;
-class SecurityController extends Controller{
-    public function showProfileAction(){
-        
+class StaffController extends Controller
+{
+    
+    public function showProfileAction(Request $request)
+    {
+        $resposity = $this->getDoctrine()->getRepository('AcmeKLBundle:Hosotthc');
+        $hstthc = $resposity->findAll();
+        $form = $this->createForm(new TTHCActionType(),NULL);
+        $hosotthc = new Hosotthc();
+        $formSearch = $this->createForm(new TTHCSearchType(),$hosotthc);
+        $form->handleRequest($request);
+        if ($form->isValid()){           
+        }
+        $formSearch->handleRequest($request);
+        if ($formSearch->isValid()){
+            echo $hosotthc->getIdcongdan()->getName();
+        }
+        return $this->render('AcmeKLBundle:Template:home.html.twig', array('hstthc' => $hstthc,
+            'form'=>$form->createView(),'formSearch'=>$formSearch->createView()));   
     }
 }
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-

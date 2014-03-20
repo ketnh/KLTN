@@ -93,7 +93,13 @@ body {
 .content {
 	padding: 0 0 0 270px;
 }
-
+.content table{
+    width: 100%;
+    font-size: 15px;
+    border: 1px solid black;
+    -webkit-border-radius: 10%;
+    border-radius: 10px;
+}
 
 /* Left Sidebar
 -----------------------------------------------------------------------------*/

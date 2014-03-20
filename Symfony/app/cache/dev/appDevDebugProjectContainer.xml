@@ -1554,7 +1554,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>53294589c0ba1</argument>
+            <argument>532aef9d936a7</argument>
           </service>
         </argument>
       </argument>
@@ -1607,7 +1607,7 @@
           <argument type="collection">
             <argument key="security.firewall.map.context.secured_area" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/template</argument>
+                <argument>^/staff/*</argument>
               </service>
             </argument>
           </argument>
@@ -1660,7 +1660,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/template</argument>
+                      <argument>^/staff/</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1794,7 +1794,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>53294589c0ba1</argument>
+            <argument>532aef9d936a7</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -1808,7 +1808,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/template</argument>
+                      <argument>^/staff/</argument>
                     </service>
                   </argument>
                   <argument type="collection">
