@@ -1,6 +1,0 @@
-acme_kl_homepage:
-    pattern:  staff/template
-    defaults: { _controller: AcmeKLBundle:Default:index }
-showTTHC:
-    pattern:  staff/showProfile
-    defaults: { _controller: AcmeKLBundle:Staff:showProfile }

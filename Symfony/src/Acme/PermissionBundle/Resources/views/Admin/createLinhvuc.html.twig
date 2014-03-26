@@ -1,0 +1,25 @@
+<h2>Tạo mới lĩnh vực thủ tục hành chính </h2>
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<table>
+    <tr>
+        <td>{{ form_label(form.name) }}</td>
+        
+        <td>{{ form_widget(form.name) }}</td>
+        <td>{{ form_errors(form.name) }}</td>
+    </tr>
+
+    <tr>
+        <td>{{ form_label(form.description) }}</td>
+        
+        <td>{{ form_widget(form.description) }}</td>
+        <td>{{ form_errors(form.description) }}</td>
+    </tr>
+    
+</table>    
+{{form_end(form)}}
+{#<form action="{{path('createLinhvuc')}}" method='post'>
+    <input type="text" id="linhvuc_name" name="linhvuc[name]" required="required">
+    <input type="text" id="linhvuc_name" name="linhvuc[name]" required="required">
+    <button type="submit" id="linhvuc_submit" name="linhvuc[submit]">Submit</button>
+</form>#}

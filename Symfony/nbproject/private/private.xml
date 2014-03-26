@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Utilities/xampp/htdocs/KLTN/Symfony/src/Acme/KLBundle/Resources/views/Template/home.html.twig</file>
-            <file>file:/D:/Utilities/xampp/htdocs/KLTN/Symfony/src/Acme/KLBundle/Form/CongDanType.php</file>
-            <file>file:/D:/Utilities/xampp/htdocs/KLTN/Symfony/src/Acme/KLBundle/Form/TTHCSearchType.php</file>
-            <file>file:/D:/Utilities/xampp/htdocs/KLTN/Symfony/src/Acme/KLBundle/Controller/StaffController.php</file>
-            <file>file:/D:/Utilities/xampp/htdocs/KLTN/Symfony/src/Acme/KLBundle/Entity/Congdan.php</file>
-            <file>file:/D:/Utilities/xampp/htdocs/KLTN/Symfony/src/Acme/KLBundle/Form/TTHCActionType.php</file>
-            <file>file:/D:/Utilities/xampp/htdocs/KLTN/Symfony/src/Acme/KLBundle/Entity/Hosotthc.php</file>
+            <file>file:/F:/Utility/xampp/htdocs/permission/src/Acme/PermissionBundle/Form/QuyenlinhvucType.php</file>
+            <file>file:/F:/Utility/xampp/htdocs/permission/src/Acme/PermissionBundle/Resources/views/Admin/addPermission.html.twig</file>
+            <file>file:/F:/Utility/xampp/htdocs/permission/src/Acme/PermissionBundle/Form/UserType.php</file>
+            <file>file:/F:/Utility/xampp/htdocs/permission/src/Acme/PermissionBundle/Entity/Quyenlinhvuc.php</file>
+            <file>file:/F:/Utility/xampp/htdocs/permission/src/Acme/PermissionBundle/Resources/config/routing.yml</file>
+            <file>file:/F:/Utility/xampp/htdocs/permission/src/Acme/PermissionBundle/Controller/PermissionController.php</file>
         </group>
     </open-files>
 </project-private>

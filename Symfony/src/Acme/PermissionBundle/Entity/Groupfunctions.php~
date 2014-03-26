@@ -1,0 +1,32 @@
+<?php
+
+namespace Acme\PermissionBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Groupfunctions
+ *
+ * @ORM\Table(name="groupfunctions")
+ * @ORM\Entity
+ */
+class Groupfunctions
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nameGroup", type="string", length=45, nullable=false)
+     */
+    private $namegroup;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

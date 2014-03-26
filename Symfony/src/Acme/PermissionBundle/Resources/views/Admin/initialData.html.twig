@@ -1,0 +1,8 @@
+{% extends "AcmePermissionBundle::Admin/baseAdmin.html.twig"%}
+{%block content %}
+{{ render(controller('AcmePermissionBundle:Permission:createUser'))}}
+<hr/>
+{{ render(controller('AcmePermissionBundle:Permission:createLinhvuc'))}}
+<hr/>
+{{ render(controller('AcmePermissionBundle:Permission:createTTHC'))}}
+{% endblock%}

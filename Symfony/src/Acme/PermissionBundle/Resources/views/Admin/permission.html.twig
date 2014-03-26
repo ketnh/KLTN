@@ -1,0 +1,27 @@
+{% extends "AcmePermissionBundle::Admin/baseAdmin.html.twig"%}
+{%block content %}
+{#{{form(form)}}#}
+{{ form_start(form) }}
+{{ form_errors(form) }} 
+<table>
+    <tr>
+        <td>UserId</td>
+        <td>Username</td>
+        <td>Quyền</td>
+        <td>Lĩnh vực</td>
+        <td>Sửa</td>
+        <td>Xóa</td>
+    </tr>
+{% for qlinhvuc in quyenlinhvuc%}
+    <tr>
+        <td>{{qlinhvuc.user.id}}</td>
+        <td>{{qlinhvuc.user.username}}</td>
+        <td>{{qlinhvuc.quyenhan.ten}}</td>
+        <td>{{qlinhvuc.linhvuc.name}}</td>
+        <td><a href="{{path('editPermission',{'id':qlinhvuc.id})}}">Edit</a></td>
+        <td>{{form_widget(form.quyenlinhvuc[qlinhvuc.id])}}</td>
+    </tr>
+{%endfor%}
+</table>
+{{form_end(form)}}
+{% endblock%}

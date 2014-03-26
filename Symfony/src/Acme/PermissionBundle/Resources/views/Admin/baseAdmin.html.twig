@@ -1,0 +1,85 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dịch Vụ Công - Khóa Luận Tốt Nghiệp</title>
+{% stylesheets 'bundles/acmepermission/lanhdao/css/bootstrap.min.css' 
+            'bundles/acmepermission/lanhdao/css/styles.min.css'
+            'bundles/acmepermission/lanhdao/css/londinium-theme.min.css'
+         filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}  
+
+{% javascripts 
+       
+                '@AcmePermissionBundle/Resources/public/lanhdao/js/*'        
+%}
+        
+         <script type="text/javascript" src="{{ asset_url }}"></script>
+        
+{% endjavascripts %}        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+        <script>
+                $(document).ready(function () {
+                $("li").click(function () {
+                $('li > ul').not($(this).children("ul")).hide();
+                $(this).children("ul").toggle();
+            });
+            });
+        </script>
+       
+</head>
+<body class="sidebar-wide">
+<!-- Navbar -->
+<div class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header"><a class="navbar-brand" href="#">Control Panel</a></div>
+  <ul class="nav navbar-nav collapse" id="navbar-menu">
+    <li><a href="#"><span>Trang Chủ</span></a></li>
+    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Danh Mục</span> <b class="caret"></b></a>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+    <li class="user dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span>Xin Chào {{app.user.username}}</span><i class="caret"></i></a>
+      <ul class="dropdown-menu dropdown-menu-right icons-right">
+        <li><a href="#">Profile</a></li>
+        <li><a href="{{path('logout')}}">Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- /navbar -->
+<!-- Page container -->
+<div class="page-container">
+  <!-- Sidebar -->
+  <div class="sidebar collapse">
+    <div class="sidebar-content">
+      <!-- Main navigation -->
+      <ul class="navigation">
+        {% block control%}            
+            {{ render(controller('AcmePermissionBundle:Default:menuCreate'))}}
+        {%endblock%}       
+      </ul>
+      <!-- /main navigation -->
+    </div>
+  </div>
+  <!-- /sidebar -->
+  <!-- Page content -->
+  <div class="page-content">
+        {% block content %}Welcome Admin{% endblock %}
+	<!-- nội dung ở đây -->
+	<div class="footer clearfix">
+      <div class="pull-left">&copy; 2014. Dịch Vụ Công - Khóa Luận Tốt Nghiệp</div>
+    </div>
+    <!-- /footer -->
+  </div>
+  <!-- /page content -->
+</div>
+<!-- /page container -->
+</body>
+</html>

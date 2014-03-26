@@ -1,0 +1,7 @@
+parameters:
+#    acme_permission.example.class: Acme\PermissionBundle\Example
+
+services:
+#    acme_permission.example:
+#        class: %acme_permission.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

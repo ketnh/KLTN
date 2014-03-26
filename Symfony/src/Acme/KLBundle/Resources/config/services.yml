@@ -1,7 +1,0 @@
-parameters:
-#    acme_kl.example.class: Acme\KLBundle\Example
-
-services:
-#    acme_kl.example:
-#        class: %acme_kl.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,31 @@
+acme_permission_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmePermissionBundle:Default:index }
+admin:
+    pattern:  /admin
+    defaults: { _controller: AcmePermissionBundle:Permission:index }
+permission:
+    pattern:  /admin/permission
+    defaults: { _controller: AcmePermissionBundle:Permission:permission }
+createUser:
+    pattern:  /admin/createUser
+    defaults: { _controller: AcmePermissionBundle:Permission:createUser }
+createTTHC:
+    pattern:  /admin/createTTHC
+    defaults: { _controller: AcmePermissionBundle:Permission:createTTHC }   
+createLinhvuc:
+    pattern:  /admin/createLinhvuc
+    defaults: { _controller: AcmePermissionBundle:Permission:createLinhvuc }       
+initialData:
+    pattern:  /admin/initial
+    defaults: { _controller: AcmePermissionBundle:Permission:intinialData }
+editPermission:
+    pattern:  /admin/editPermission/{id}
+    defaults: { _controller: AcmePermissionBundle:Permission:editPermission }    
+    requirements:
+        id: \d+
+addPermission:
+    pattern:  /admin/addPermission/{id}
+    defaults: { _controller: AcmePermissionBundle:Permission:addPermission }        
+    requirements:
+        id: \d+

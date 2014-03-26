@@ -1,14 +1,11 @@
-acme_kl:
-    resource: "@AcmeKLBundle/Resources/config/routing.yml"
-    prefix:   /
-
-acme_store:
-    resource: "@AcmeStoreBundle/Resources/config/routing.yml"
+acme_permission:
+    resource: "@AcmePermissionBundle/Resources/config/routing.yml"
     prefix:   /
 login:
     path: /login
-    defaults: { _controller: AcmeKLBundle:Security:login }
+    defaults: { _controller: AcmePermissionBundle:Security:login }
 login_check:
-    path: staff/login_check
+    path: admin/login_check
 logout:
-    path: staff/logout
+    path: admin/logout
+

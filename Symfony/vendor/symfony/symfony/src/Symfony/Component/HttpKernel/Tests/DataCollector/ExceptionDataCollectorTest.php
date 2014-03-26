@@ -11,20 +11,13 @@
 
 namespace Symfony\Component\HttpKernel\Tests\DataCollector;
 
-use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\HttpKernel\DataCollector\ExceptionDataCollector;
+use Symfony\Component\HttpKernel\Exception\FlattenException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ExceptionDataCollectorTest extends \PHPUnit_Framework_TestCase
 {
-    protected function setUp()
-    {
-        if (!class_exists('Symfony\Component\HttpFoundation\Request')) {
-            $this->markTestSkipped('The "HttpFoundation" component is not available');
-        }
-    }
-
     public function testCollect()
     {
         $e = new \Exception('foo',500);
@@ -37,10 +30,11 @@ class ExceptionDataCollectorTest extends \PHPUnit_Framework_TestCase
         $c->collect(new Request(), new Response(),$e);
 
         $this->assertTrue($c->hasException());
-        $this->assertEquals($flattened, $c->getException());
-        $this->assertSame('foo', $c->getMessage());
-        $this->assertSame(500, $c->getCode());
-        $this->assertSame('exception', $c->getName());
-        $this->assertSame($trace, $c->getTrace());
+        $this->assertEquals($flattened,$c->getException());
+        $this->assertSame('foo',$c->getMessage());
+        $this->assertSame(500,$c->getCode());
+        $this->assertSame('exception',$c->getName());
+        $this->assertSame($trace,$c->getTrace());
     }
+
 }
